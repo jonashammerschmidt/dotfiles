@@ -1,0 +1,7 @@
+[user]
+	name = Jonas Hammerschmidt
+	email = j.hammerschmidt@krz.de
+[alias]
+    lola = "log --graph --decorate --oneline"
+    rmb = "!f() { git branch --merged | grep -v "master" | while read i; do git branch -d $i; done; }; f"
+
