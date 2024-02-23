@@ -16,7 +16,7 @@ $cmd_duration\
 [directory]
 style = "fg:#000000 bg:#769ff0"
 format = "[ $path ]($style)"
-truncation_length = 3
+truncation_length = 2
 truncation_symbol = "…/"
 
 [directory.substitutions]
