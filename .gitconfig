@@ -5,6 +5,7 @@
 [alias]
     lola = "log --graph --decorate --oneline"
     rmb='!f() { git branch --merged | grep -Ev "^(main|master)$" | while read i; do git branch -d $i; done; }; f'
+    amend-to = "!f() { COMMIT_HASH=$(git log --pretty=oneline | fzf | awk '{print $1}'); git commit --fixup $COMMIT_HASH; GIT_SEQUENCE_EDITOR=: git rebase --autostash --autosquash -i $COMMIT_HASH^; }; f"
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f

@@ -11,6 +11,7 @@ Install:
 ```
 brew install --cask warp font-hack-nerd-font
 brew install starship
+brew install fzf
 ```
 
 Warp-Settings:
