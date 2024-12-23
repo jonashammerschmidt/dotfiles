@@ -1,7 +1,13 @@
 [user]
 	name = Jonas Hammerschmidt
-	email = j.hammerschmidt@krz.de
+	email = j.hammerschmidt.adm@owlit.onmicrosoft.com
+
 [alias]
     lola = "log --graph --decorate --oneline"
-    rmb = "!f() { git branch --merged | grep -v "master" | while read i; do git branch -d $i; done; }; f"
+    rmb='!f() { git branch --merged | grep -Ev "^(main|master)$" | while read i; do git branch -d $i; done; }; f'
 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
