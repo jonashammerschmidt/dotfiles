@@ -6,6 +6,9 @@
     lola = "log --graph --decorate --oneline"
     rmb='!f() { git branch --merged | grep -Ev "^(main|master)$" | while read i; do git branch -d $i; done; }; f'
     amend-to = "!f() { COMMIT_HASH=$(git log --pretty=oneline | fzf | awk '{print $1}'); git commit --fixup $COMMIT_HASH; GIT_SEQUENCE_EDITOR=: git rebase --autostash --autosquash -i $COMMIT_HASH^; }; f"
+    gomc = "!f() { git fetch && git fetch origin main:main && git checkout main && git fetch -p && git rmb; }; f"
+    godc = "!f() { git fetch && git fetch origin dev:dev && git checkout dev && git fetch -p && git rmb; }; f"
+    gomsc = "!f() { git fetch && git fetch origin master:master && git checkout master && git fetch -p && git rmb; }; f"
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
